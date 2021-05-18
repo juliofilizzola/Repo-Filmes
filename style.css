@@ -10,3 +10,17 @@
   padding: 15px;
   background-image: linear-gradient(to left, #090979,#00d4ff);
 }
+
+.menu a {
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  transition: 2s;
+}
+
+.menu a:hover {
+  background-color: white;
+  color: black;
+}
