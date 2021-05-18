@@ -9,6 +9,7 @@
   align-items: center;
   padding: 15px;
   background-image: linear-gradient(to left, #090979,#00d4ff);
+  transition: 0.5s;
 }
 
 .menu a {
@@ -17,10 +18,26 @@
   color: white;
   padding: 8px;
   border-radius: 8px;
-  transition: 2s;
+  transition: 0.8s;
 }
 
 .menu a:hover {
   background-color: white;
   color: black;
+}
+
+.itens-carrocel {
+  width: 50vw;
+}
+
+.item-img{
+  display: flex;
+}
+
+img {
+  object-fit: cover;
+  overflow-x: auto;
+  flex: none;
+  width: 100%;
+  height: 100%;
 }
