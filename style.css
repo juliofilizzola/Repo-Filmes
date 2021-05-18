@@ -3,11 +3,10 @@
   padding: 0;
 }
 
-header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px;
   background-image: linear-gradient(to left, #090979,#00d4ff);
 }
-
