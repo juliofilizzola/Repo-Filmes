@@ -1,20 +1,40 @@
-window.onload = function onlod() {
-  searchInfoApiAsync();
+function createProductImageElement(imageSource) {
+  const img = document.createElement('img');
+  img.className = 'item__image';
+  img.src = imageSource;
+  return img;
 }
 
-const searchInfoApiAsync = async () => {
+function createCustomElement(element, className, innerText) {
+  const e = document.createElement(element);
+  e.className = className;
+  e.innerText = innerText;
+  return e;
+}
+
+function createProductItemElement({ id: id, name: name, thumbnail}) {
+  const section = document.createElement('section');
+  section.className = 'item';
+  section.appendChild(createCustomElement('span', 'item__id', id));
+  section.appendChild(createCustomElement('span', 'item__name', name));
+  console.log(thumbnail)
+  section.appendChild(createProductImageElement(`${thumbnail.path}.${thumbnail.extension}`));
+  const sectionItems = document.querySelector('.items');
+  sectionItems.appendChild(section);
+  return section;
+}
+
+const searchInfoApiAsync = () => {
   const keyPub = '2142289d5bb266aa4efc29e905f1e2c9';
   const keyMesc = 'b3be571fac403debd889682454cdef24';
   const keyDate = '1621340894';
 
-	await fetch(`http://gateway.marvel.com/v1/public/comics?ts=${keyDate}&apikey=${keyPub}&hash=${keyMesc}`)
-	.then(response => {
-		console.log(response.json());
-	})
-	.catch(err => {
-		console.log(err);
-	});
-
+	fetch(`http://gateway.marvel.com/v1/public/characters?ts=${keyDate}&apikey=${keyPub}&hash=${keyMesc}&offset=200&limit=100`)
+    .then(response => response.json())
+    .then(response => response.data.results.filter((value) value.match(/image_not_available/)  ))
+    .then(response => response.data.results.forEach((value) => createProductItemElement(value)))
 }
 
-//Filizzola
+window.onload = function onload() {
+  searchInfoApiAsync();
+}
