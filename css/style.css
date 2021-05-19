@@ -27,35 +27,30 @@
   color: black;
 }
 
-.carrosel-container {
-  display: grid;
-  place-items: center;
-}
-
 .items-wrapper {
-  width: 100vw;
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .items {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-}
-
-.item {
-  flex: none;
   width: 100%;
-  height: 400px;
-  object-fit: cover;
-
-  scroll-snap-align: start;
-  pointer-events: none;
+  height: 50vw;
+  max-height: 500px;
+  position: relative;
 }
 
-img {
+.items img {
+  opacity: 0;
+  position: absolute;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  transition: opacity 4;
 }
 
+.items img.selected {
+   opacity: 1;
+
+}

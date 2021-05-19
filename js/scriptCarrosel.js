@@ -1,14 +1,26 @@
-const items = document.querySelector('.items');
-items.addEventListener('wheel', event => {
-  if (event.deltaY > 0) {
-    event.target.scrollBy(300, 0)
-  } else {
-    event.target.scrollBy(-300, 0)
+const time = 3000;
+let currentImageIndex = 0;
+const img = document.querySelectorAll('.items img');
+const max = img.length;
+
+
+
+const nextImage = () => {
+  img[currentImageIndex].classList.remove("selected");
+  
+
+  currentImageIndex += 1; 
+  if (currentImageIndex >= max) {
+    currentImageIndex = 0;
   }
-})
 
-const buttom = document.querySelector('.carousel-control-prev');
+  img[currentImageIndex].classList.add("selected");
+}
 
-buttom.addEventListener('click', event => {
-  console.log(event);
-})
+const start = () =>{
+  setInterval(() =>{
+    nextImage();
+  }, time)
+}
+
+window.addEventListener('load', start)
