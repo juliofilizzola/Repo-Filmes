@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .header {
@@ -26,18 +27,35 @@
   color: black;
 }
 
-.itens-carrocel {
-  width: 50vw;
+.carrosel-container {
+  display: grid;
+  place-items: center;
 }
 
-.item-img{
+.items-wrapper {
+  width: 100vw;
+}
+
+.items {
   display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.item {
+  flex: none;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+
+  scroll-snap-align: start;
+  pointer-events: none;
 }
 
 img {
-  object-fit: cover;
-  overflow-x: auto;
-  flex: none;
   width: 100%;
   height: 100%;
 }
+
