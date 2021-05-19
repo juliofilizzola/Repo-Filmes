@@ -1,4 +1,4 @@
-const time = 3000;
+const time = 5000;
 let currentImageIndex = 0;
 const img = document.querySelectorAll('.items img');
 const max = img.length;
