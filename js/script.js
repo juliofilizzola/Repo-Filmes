@@ -17,7 +17,6 @@ function createProductItemElement({ id: id, name: name, thumbnail}) {
   section.className = 'item';
   section.appendChild(createCustomElement('span', 'item__id', id));
   section.appendChild(createCustomElement('span', 'item__name', name));
-  console.log(thumbnail)
   section.appendChild(createProductImageElement(`${thumbnail.path}.${thumbnail.extension}`));
   const sectionItems = document.querySelector('.items');
   sectionItems.appendChild(section);
