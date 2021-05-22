@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 10px;
   background-image: linear-gradient(to left, #090979,#00d4ff);
   transition: 0.5s;
 }
@@ -17,7 +17,7 @@
   text-decoration: none;
   background-color: black;
   color: white;
-  padding: 8px;
+  padding: 5px;
   border-radius: 8px;
   transition: 0.8s;
 }
