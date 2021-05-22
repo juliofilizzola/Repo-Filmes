@@ -31,8 +31,7 @@ const searchInfoApiAsync = () => {
 
 	fetch(`http://gateway.marvel.com/v1/public/characters?ts=${keyDate}&apikey=${keyPub}&hash=${keyMesc}&offset=200&limit=100`)
     .then(response => response.json())
-    .then(response => response.data.results.filter((value) value.match(/image_not_available/)  ))
-    .then(response => response.data.results.forEach((value) => createProductItemElement(value)))
+    .then(response => response.data.results.filter((value) => !value.thumbnail.path.includes('image_not_available')).forEach((value) => createProductItemElement(value)));
 }
 
 window.onload = function onload() {

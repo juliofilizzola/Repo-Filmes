@@ -1,8 +1,14 @@
-header {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: linear-gradient(right, color-stop1, #090979,#00d4ff);
+  padding: 15px;
+  background-image: linear-gradient(to left, #090979,#00d4ff);
 }
 
 .top-bar {
